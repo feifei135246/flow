@@ -1,0 +1,67 @@
+2020-05-04 11:28:43,369 [6] ERROR Microsoft.EntityFrameworkCore.Database.Command [(null)] - Failed executing DbCommand (55ms) [Parameters=[@p27='?', @p0='?', @p1='?', @p2='?' (DbType = Int32), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?', @p15='?', @p16='?', @p17='?', @p18='?' (DbType = Int32), @p19='?', @p20='?' (DbType = Int32), @p21='?', @p22='?', @p23='?', @p24='?', @p25='?', @p26='?', @p28='?', @p29='?', @p30='?', @p31='?' (DbType = Int32), @p32='?', @p33='?', @p34='?' (DbType = DateTime), @p35='?', @p36='?', @p37='?', @p38='?', @p39='?', @p40='?', @p41='?', @p42='?', @p43='?', @p57='?', @p44='?' (DbType = DateTime), @p45='?', @p46='?' (DbType = DateTime), @p47='?', @p48='?', @p49='?', @p50='?' (DbType = DateTime), @p51='?', @p52='?', @p53='?', @p54='?', @p55='?', @p56='?', @p58='?', @p59='?' (DbType = DateTime), @p60='?', @p61='?' (DbType = DateTime), @p62='?', @p63='?', @p64='?', @p65='?' (DbType = DateTime), @p66='?', @p67='?', @p68='?', @p69='?', @p70='?', @p71='?', @p72='?', @p73='?' (DbType = DateTime), @p74='?', @p75='?', @p76='?', @p77='?', @p78='?' (DbType = Int32), @p79='?', @p80='?' (DbType = Int32), @p81='?', @p82='?', @p83='?' (DbType = Int32), @p84='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+UPDATE fl_flowinstance SET "ActivityId" = @p0, "ActivityName" = @p1, "ActivityType" = @p2, "Code" = @p3, "CreateCompanyId" = @p4, "CreateDate" = @p5, "CreateDeptId" = @p6, "CreateUserId" = @p7, "CreateUserName" = @p8, "CustomName" = @p9, "DbName" = @p10, "Description" = @p11, "Disabled" = @p12, "FlowLevel" = @p13, "FrmContentData" = @p14, "FrmContentParse" = @p15, "FrmData" = @p16, "FrmId" = @p17, "FrmType" = @p18, "InstanceSchemeId" = @p19, "IsFinish" = @p20, "MakerList" = @p21, "PreviousId" = @p22, "SchemeContent" = @p23, "SchemeId" = @p24, "SchemeType" = @p25, "UninId" = @p26
+WHERE "Id" = @p27;
+INSERT INTO fl_flowinstancelog ("Id", "ActivityId", "ActivityName", "ActivityType", "CreateCompanyId", "CreateCompanyName", "CreateDate", "CreateDeptId", "CreateDeptName", "CreateUserId", "CreateUserName", "FlowinstanceId", "MakerList", "MakerNameList", "PreviousId", "UninId")
+VALUES (@p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43);
+UPDATE fl_flowinstanceoperationhistory SET "BeginTime" = @p44, "Content" = @p45, "CreateDate" = @p46, "CreateUserId" = @p47, "CreateUserJob" = @p48, "CreateUserName" = @p49, "EndTime" = @p50, "InstanceId" = @p51, "NodeId" = @p52, "NodeName" = @p53, "OperateList" = @p54, "Opinion" = @p55, "Result" = @p56
+WHERE "Id" = @p57;
+INSERT INTO fl_flowinstanceoperationhistory ("Id", "BeginTime", "Content", "CreateDate", "CreateUserId", "CreateUserJob", "CreateUserName", "EndTime", "InstanceId", "NodeId", "NodeName", "OperateList", "Opinion", "Result")
+VALUES (@p58, @p59, @p60, @p61, @p62, @p63, @p64, @p65, @p66, @p67, @p68, @p69, @p70, @p71);
+INSERT INTO fl_flowinstancetransitionhistory ("Id", "CreateDate", "CreateUserId", "CreateUserName", "FromNodeId", "FromNodeName", "FromNodeType", "InstanceId", "IsFinish", "ToNodeId", "ToNodeName", "ToNodeType", "TransitionSate")
+VALUES (@p72, @p73, @p74, @p75, @p76, @p77, @p78, @p79, @p80, @p81, @p82, @p83, @p84);
+Npgsql.PostgresException (0x80004005): 42P01: relation "fl_flowinstancelog" does not exist
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming) in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 444
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 332
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1221
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1132
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+2020-05-04 11:28:43,561 [6] ERROR Microsoft.EntityFrameworkCore.Update [(null)] - An exception occurred in the database while saving changes for context type 'OpenAuth.Repository.OpenAuthDBContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> Npgsql.PostgresException: 42P01: relation "fl_flowinstancelog" does not exist
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming) in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 444
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 332
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1221
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1132
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded) in C:\projects\EFCore.PG\src\EFCore.PG\Storage\Internal\NpgsqlExecutionStrategy.cs:line 51
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IReadOnlyList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> Npgsql.PostgresException: 42P01: relation "fl_flowinstancelog" does not exist
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming) in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 444
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 332
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1221
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1132
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded) in C:\projects\EFCore.PG\src\EFCore.PG\Storage\Internal\NpgsqlExecutionStrategy.cs:line 51
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IReadOnlyList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)

@@ -1,0 +1,16 @@
+2020-02-01 16:39:57,595 [6] ERROR Microsoft.EntityFrameworkCore.Database.Command [(null)] - Failed executing DbCommand (74ms) [Parameters=[@__request_FlowInstanceId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."BeginTime", u."Content", u."CreateDate", u."CreateUserId", u."CreateUserJob", u."CreateUserName", u."EndTime", u."InstanceId", u."NodeId", u."NodeName", u."OperateList", u."Opinion", u."Result"
+FROM fl_flowinstanceoperationhistory AS u
+WHERE u."InstanceId" = @__request_FlowInstanceId_0
+ORDER BY u."CreateDate" DESC
+Npgsql.PostgresException (0x80004005): 42703: 字段 u.OperateList 不存在
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming) in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 444
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 332
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1221
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1132
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
