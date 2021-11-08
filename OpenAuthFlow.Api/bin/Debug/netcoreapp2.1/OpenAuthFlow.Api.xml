@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenAuthFlow.Api</name>
+    </assembly>
+    <members>
+        <member name="T:OpenAuth.WebApi.Controllers.CheckController">
+            <inheritdoc />
+            <summary>
+            登录及与登录相关的接口
+            </summary>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.CheckController.Login(OpenAuth.App.SSO.LoginRequest)">
+            <summary>
+            设置对话token
+            </summary>
+            <param name="request">登录参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:OpenAuth.WebApi.Controllers.FlowInstancesController">
+            <summary>
+            流程实例
+            </summary>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowInstancesController.Get(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowInstancesController.QueryHistories(OpenAuth.App.Request.QueryFlowInstanceHistoryReq)">
+            <summary>
+            获取一个流程实例的操作历史记录
+            </summary>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowInstancesController.AddInst(OpenAuth.App.Request.AddFlowInstanceReq)">
+            <summary>创建一个新的流程实例</summary>
+            <remarks> www.cnblogs.com/yubaolee, 2019-03-06. </remarks>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowInstancesController.Update(OpenAuth.Repository.Domain.FlowInstance)">
+            <summary>
+            修改
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowInstancesController.Verification(OpenAuth.App.Request.VerificationReq)">
+            <summary>
+            审批
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowInstancesController.Load(OpenAuth.App.Request.QueryFlowInstanceListReq)">
+            <summary>
+            加载列表
+            </summary>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowInstancesController.Load_Sim(OpenAuth.App.Request.QueryFlowInstanceListReq)">
+            <summary>
+            加载列表
+            </summary>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowInstancesController.Delete(System.String[])">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpenAuth.WebApi.Controllers.FlowSchemesController">
+            <summary>
+            表单操作
+            </summary>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowSchemesController.Get(System.String)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowSchemesController.Add(OpenAuth.Repository.Domain.FlowScheme)">
+            <summary>
+            添加
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowSchemesController.Update(OpenAuth.Repository.Domain.FlowScheme)">
+            <summary>
+            修改
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowSchemesController.Load(OpenAuth.App.Request.QueryFlowSchemeListReq)">
+            <summary>
+            加载列表
+            </summary>
+        </member>
+        <member name="M:OpenAuth.WebApi.Controllers.FlowSchemesController.Delete(System.String[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpenAuth.WebApi.Model.AuthResponsesOperationFilter">
+            <summary>
+            swagger请求的时候，如果是Identity方式，自动加授权方式
+            </summary>
+        </member>
+    </members>
+</doc>

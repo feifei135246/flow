@@ -1,0 +1,6 @@
+F:\svn_willjay\crm2\OpenAuth.Core\OpenAuthFlow.Api\obj\Release\netcoreapp3.1\OpenAuthFlow.Api.csprojAssemblyReference.cache
+F:\svn_willjay\crm2\OpenAuth.Core\OpenAuthFlow.Api\obj\Release\netcoreapp3.1\OpenAuthFlow.Api.AssemblyInfoInputs.cache
+F:\svn_willjay\crm2\OpenAuth.Core\OpenAuthFlow.Api\obj\Release\netcoreapp3.1\OpenAuthFlow.Api.AssemblyInfo.cs
+F:\svn_willjay\crm2\OpenAuth.Core\OpenAuthFlow.Api\obj\Release\netcoreapp3.1\OpenAuthFlow.Api.csproj.CoreCompileInputs.cache
+F:\svn_willjay\crm2\OpenAuth.Core\OpenAuthFlow.Api\obj\Release\netcoreapp3.1\OpenAuthFlow.Api.MvcApplicationPartsAssemblyInfo.cs
+F:\svn_willjay\crm2\OpenAuth.Core\OpenAuthFlow.Api\obj\Release\netcoreapp3.1\OpenAuthFlow.Api.MvcApplicationPartsAssemblyInfo.cache
